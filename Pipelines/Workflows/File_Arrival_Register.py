@@ -1,3 +1,4 @@
+# Databricks notebook source
 # Old style AutoLoaded - to be converted to LDP
 
 cat = dbutils.widgets.get('cat')
