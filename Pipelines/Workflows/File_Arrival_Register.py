@@ -5,8 +5,8 @@ cat = dbutils.widgets.get('cat')
 db = dbutils.widgets.get('db')
 
 
-images_folder = f'/volumes/{cat}@{db}/incoming'
-checkpoint_folder = f'/volumes/{cat}@{db}/checkpoints/incoming/fits_auto_loader'
+images_folder = f'/Volumes/{cat}/{db}/incoming'
+checkpoint_folder =f'/Volumes/{cat}/{db}/checkpoints/incoming/fits_auto_loader'
 
 (spark.readStream
   .format('cloudFiles')
