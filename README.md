@@ -1,2 +1,2 @@
-# astropub
-Public repository for astronomy and astrophysics code
+# Astropub
+Public repository for astronomy and astrophysics code.
