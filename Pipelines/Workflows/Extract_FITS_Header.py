@@ -34,8 +34,10 @@ spark.udf.register(name='extract_header',f=extract_header)
 
 
 dfFITSheaderCards = spark.sql(f'select imageid, fits_header from (select imageid, extract_header(content) as fits_header from {cat}.{db}.fits_files_raw)')
-json_schema = dfFITSheaderCards.select(schema_of_json(dfFITSheaderCards.fits_header)).first()[0]
-dfFITSheader = dfFITSheaderCards.withColumn('struct_col', from_json(col('fits_header'), json_schema))
+#json_schema = dfFITSheaderCards.select(schema_of_json(dfFITSheaderCards.fits_header)).first()[0]
+#dfFITSheader = dfFITSheaderCards.withColumn('struct_col', from_json(col('fits_header'), json_schema))
+header_schema = StructType([f for f in schema.fields if f.name != 'imageid'])
+dfFITSheader = dfFITSheaderCards.withColumn('struct_col', from_json(col('fits_header'), header_schema))
 dfFITSheader.createOrReplaceTempView('dffitsheader')
 
 
