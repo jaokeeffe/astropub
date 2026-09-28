@@ -9,7 +9,7 @@ db = dbutils.widgets.get('db')
 
 # COMMAND ----------
 
-# MAGIC %sql create table if not exists ${cat}.${db}.fits_files_centroids (imageid long, centroidid long, xcentroid double, ycentroid double, sharpness double, roundness1 double, roundness2 double, npix long, peak double, flux double, mag double)
+# MAGIC %sql create table if not exists ${cat}.${db}.fits_files_centroids (imageid long, centroidid long, x_centroid double, y_centroid double, sharpness double, roundness1 double, roundness2 double, n_pixels long, peak double, flux double, mag double)
 
 # COMMAND ----------
 
