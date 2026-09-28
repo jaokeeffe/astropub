@@ -42,12 +42,12 @@ for i in objectdata:
                           {
                             'imageid': 'new.imageid',
                             'centroidid': 'new.centroidid',
-                            'xcentroid': 'new.xcentroid',
-                            'ycentroid': 'new.ycentroid',
+                            'x_centroid': 'new.x_centroid',
+                            'y_centroid': 'new.y_centroid',
                             'sharpness': 'new.sharpness',
                             'roundness1': 'new.roundness1',
                             'roundness2': 'new.roundness2',
-                            'npix': 'new.npix',
+                            'n_pixels': 'new.n_pixels',
                             'peak': 'new.peak',
                             'flux': 'new.flux',
                             'mag': 'new.mag'
