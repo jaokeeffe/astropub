@@ -111,8 +111,8 @@ def solve_from_source_list_api(url, qtable, image_width, image_height, scale_low
     qtable_to_fits_bintable(qtable[:100], image_width, image_height, xyls, overwrite=True)
 
     # Not sure if the xcentroid/ycentroid need to change to x_centroid/y_centroid, but I will leave them as is for now.  The API should be able to handle it.
-    payload = {'xcolumn': 'xcentroid',
-        'ycolumn': 'ycentroid',
+    payload = {'xcolumn': 'x_centroid',
+        'ycolumn': 'y_centroid',
         'scale_low': scale_low,
         'scale_high': scale_high}
     files=[
