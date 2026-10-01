@@ -89,7 +89,7 @@ for image in images:
   print(f'Image {imageid} has {len(sources)} sources')
   if type(sources) is pd.DataFrame:
     sources = Table.from_pandas(sources)
-  h = ps.solve_from_source_list_api(ps_url, sources['x_centroid', 'y_centroid', 'flux'], image_width, image_height, pixelscale - 0.02, pixelscale + 0.02)
+  h = ps.solve_from_source_list_api(ps_url, sources['x_centroid', 'y_centroid', 'flux'], image_width, image_height, pixelscale - 0.5, pixelscale + 0.5)
   column_str = f'{imageid},' # For using SQL INSERT
   image_solution = [imageid]
   for c in h.header.items():
