@@ -10,7 +10,7 @@ db = dbutils.widgets.get('db')
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC create table if not exists ${cat}.${db}.fits_files_plate_solutions
+# MAGIC create table if not exists `${cat}`.`${db}`.fits_files_plate_solutions
 # MAGIC (imageid long,
 # MAGIC simple boolean,
 # MAGIC bitpix int,
