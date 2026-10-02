@@ -71,9 +71,9 @@ cat = dbutils.widgets.get('cat')
 db = dbutils.widgets.get('db')
 ps_url = dbutils.widgets.get('ps_url')
 
-plate_solve_table = f'{cat}.{db}.fits_files_plate_solutions'
-fits_headers = f'{cat}.{db}.fits_files_header'
-centroids_table = f'{cat}.{db}.fits_files_centroids'
+plate_solve_table = f'`{cat}`.`{db}`.fits_files_plate_solutions'
+fits_headers = f'`{cat}`.`{db}`.fits_files_header'
+centroids_table = f'`{cat}`.`{db}`.fits_files_centroids'
 
 images = spark.sql(f'select imageid, naxis1, naxis2, pixscale from {fits_headers} as h where not exists (select * from {plate_solve_table} as s where h.imageid = s.imageid and s.simple is true)').collect()
 #image_solutions = []

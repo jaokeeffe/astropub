@@ -20,9 +20,9 @@ import numpy as np
 from delta.tables import *
 from pyspark.sql.functions import lit
 
-fits_centroids_table_name = f'{cat}.{db}.fits_files_centroids'
+fits_centroids_table_name = f'`{cat}`.`{db}`.fits_files_centroids'
 
-objectdata = spark.sql(f'select h.imageid, h.ra, h.dec, h.naxis1, h.naxis2, d.fits_data from {cat}.{db}.fits_files_data d inner join {cat}.{db}.fits_files_header h on d.imageid = h.imageid where d.imageid not in (select imageid from {fits_centroids_table_name})').collect()
+objectdata = spark.sql(f'select h.imageid, h.ra, h.dec, h.naxis1, h.naxis2, d.fits_data from `{cat}`.`{db}`.fits_files_data d inner join `{cat}`.`{db}`.fits_files_header h on d.imageid = h.imageid where d.imageid not in (select imageid from {fits_centroids_table_name})').collect()
 
 centroid_table = DeltaTable.forName(spark, fits_centroids_table_name)
 
